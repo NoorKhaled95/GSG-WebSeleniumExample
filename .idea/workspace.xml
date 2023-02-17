@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f307be33-d55b-4198-8ca6-f89ab7077dc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/MainTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/AcademyPageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignUpTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9853ecce-6e47-499e-9977-c6573beab0a9" />
+        <option name="url" value="https://github.com/NoorKhaled95/GSG-WebSeleniumExample.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -43,20 +58,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="TestNG.MainTest">
+}</component>
+  <component name="RunManager" selected="TestNG.H:/AutomtionTest/GSG-WebSeleniumExample/testng.xml">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="GSG-WebSeleniumExample" />
+      <module name="WorldMarketAutomationTest" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="org.example.*" />
@@ -67,10 +82,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="GSG-WebSeleniumExample" />
+    <configuration name="H:/AutomtionTest/GSG-WebSeleniumExample/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WorldMarketAutomationTest" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignUpTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WorldMarketAutomationTest" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="MAIN_CLASS_NAME" value="SignUpTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -78,10 +103,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.Test1" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="GSG-WebSeleniumExample" />
+    <configuration name="SignUpTest.Test1" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WorldMarketAutomationTest" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="MAIN_CLASS_NAME" value="SignUpTest" />
       <option name="METHOD_NAME" value="Test1" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -90,10 +115,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MainTest.Test2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="GSG-WebSeleniumExample" />
+    <configuration name="SignUpTest.Test2" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WorldMarketAutomationTest" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="MAIN_CLASS_NAME" value="SignUpTest" />
       <option name="METHOD_NAME" value="Test2" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -104,9 +129,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.MainTest" />
-        <item itemvalue="TestNG.MainTest.Test1" />
-        <item itemvalue="TestNG.MainTest.Test2" />
+        <item itemvalue="TestNG.H:/AutomtionTest/GSG-WebSeleniumExample/testng.xml" />
+        <item itemvalue="TestNG.SignUpTest" />
+        <item itemvalue="TestNG.SignUpTest.Test1" />
+        <item itemvalue="TestNG.SignUpTest.Test2" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -120,6 +146,21 @@
       <option name="presentableId" value="Default" />
       <updated>1675606274809</updated>
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1675952074220</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675952074220</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first commit">
+      <created>1675952148556</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675952148556</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,5 +176,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>

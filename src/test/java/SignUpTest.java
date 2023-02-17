@@ -2,7 +2,6 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -10,7 +9,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertTrue;
 
-public class MainTest {
+public class SignUpTest {
     ChromeDriver chromeDriver;
     WebDriverWait wait;
 
@@ -49,13 +48,6 @@ public class MainTest {
         famCareAcademyButton.click();
         WebElement psychologicalAspect = chromeDriver.findElement(By.xpath("//div[@data-id='a28c3ce']"));
         assertTrue(psychologicalAspect.isDisplayed());
-    }
-
-    @Test(priority = 4)
-    public void verifyThatClickingAcademyButtonOpenArchive(){
-        WebElement psychologicalAspect = chromeDriver.findElement(By.xpath("//div[@data-id='a28c3ce']"));
-        wait.until(ExpectedConditions.elementToBeClickable(psychologicalAspect));
-        psychologicalAspect.click();
     }
 
 //
