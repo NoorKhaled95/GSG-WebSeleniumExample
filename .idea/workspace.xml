@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f307be33-d55b-4198-8ca6-f89ab7077dc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/AcademyPageTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+    <list default="true" id="f307be33-d55b-4198-8ca6-f89ab7077dc6" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/src/test/java/CartAndCheckoutTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SearchAndFilterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/WishListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/WorldMarketTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignUpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AcademyPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignInTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignUpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,17 +60,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "H:/AutomtionTest/WorldMarket",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.H:/AutomtionTest/GSG-WebSeleniumExample/testng.xml">
+}]]></component>
+  <component name="RunManager" selected="TestNG.H:/AutomtionTest/WorldMarket/testng.xml">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="WorldMarketAutomationTest" />
@@ -82,10 +85,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="H:/AutomtionTest/GSG-WebSeleniumExample/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="WorldMarket" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="WorldMarket" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="H:/AutomtionTest/WorldMarket/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="WorldMarketAutomationTest" />
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
       <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="PROPERTIES_FILE" value="" />
       <properties />
       <listeners />
       <method v="2">
@@ -127,9 +152,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="TestNG.H:/AutomtionTest/WorldMarket/testng.xml" />
+      <item itemvalue="TestNG.SignUpTest" />
+      <item itemvalue="TestNG.SignUpTest.Test1" />
+      <item itemvalue="TestNG.SignUpTest.Test2" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.H:/AutomtionTest/GSG-WebSeleniumExample/testng.xml" />
+        <item itemvalue="TestNG.H:/AutomtionTest/WorldMarket/testng.xml" />
         <item itemvalue="TestNG.SignUpTest" />
         <item itemvalue="TestNG.SignUpTest.Test1" />
         <item itemvalue="TestNG.SignUpTest.Test2" />
@@ -160,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675952148556</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first commit">
+      <created>1676678267700</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676678267700</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

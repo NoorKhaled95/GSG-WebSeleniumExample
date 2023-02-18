@@ -4,13 +4,13 @@
     <test name="flow1">
         <classes>
             <class name="SignUpTest"/>
-            <class name="AcademyPageTest"/>
+            <class name="SignInTest"/>
         </classes>
     </test>
 
     <test name="flow2">
         <classes>
-            <class name="AcademyPageTest"/>
+            <class name="SignInTest"/>
             <class name="SignUpTest"/>
         </classes>
     </test>
