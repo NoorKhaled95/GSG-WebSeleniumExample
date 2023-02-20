@@ -10,8 +10,14 @@ import org.testng.annotations.Test;
 public class WishListTest {
     @Test(priority = 1)
     public void verifyAddToWishLisButtonIsClickable() {
-        WebElement addToWishlistButton = BrowseWorldMarketTest.driver.findElement(By.xpath("//*[@id=\"ml-icon-heart_438620\"]"));
+        WebElement addToWishlistButton = BrowseWorldMarketTest.driver.findElement(By.xpath("//*[@id=\"ml-icon-heart_412089\"]"));
         addToWishlistButton.click();
+        BrowseWorldMarketTest.driver.manage().deleteAllCookies();
+    }
+
+    @AfterTest
+    public void tearDown() {
+        BrowseWorldMarketTest.driver.quit();
     }
 }
 

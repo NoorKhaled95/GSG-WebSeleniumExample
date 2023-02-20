@@ -9,10 +9,16 @@
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="flow2" parallel="false">
+<!--    <test name="flow2" parallel="false">-->
+<!--        <classes>-->
+<!--            <class name="BrowseWorldMarketTest"/>-->
+<!--            <class name="WishListTest"/>-->
+<!--            <class name="SignInTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="flow3">
         <classes>
-            <class name="BrowseWorldMarketTest"/>
-            <class name="WishListTest"/>
             <class name="SignInTest"/>
         </classes>
     </test>
