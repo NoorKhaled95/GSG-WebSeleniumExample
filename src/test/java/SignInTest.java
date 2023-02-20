@@ -26,47 +26,7 @@ public class SignInTest {
         driver.manage().deleteAllCookies();
     }
 
-//    @Test(priority = 1)
-//    public void verifyThePopUpCloseIconIsClickable(){
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"cpwm-additionaldisclaimer3\"]/button")));
-//        WebElement popUpCloseIcon = driver.findElement(By.xpath("//*[@id=\"cpwm-additionaldisclaimer3\"]/button"));
-//        popUpCloseIcon.click();
-//    }
-
-//    @Test(priority = 2)
-//    public void verifyAuthButtonIsDisplaying() {
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ml-topnav-identity-link\"]")));
-//        WebElement authButton = driver.findElement(By.xpath("//*[@id=\"ml-topnav-identity-link\"]"));
-//        Assert.assertTrue(authButton.isDisplayed());
-//    }
-
-//    @Test(priority = 3)
-//    public void verifyAuthButtonIsClickable() {
-//        WebElement authButton = driver.findElement(By.xpath("//*[@id=\"ml-topnav-identity-link\"]"));
-//        authButton.click();
-//    }
-
-//    @Test(priority = 4)
-//    public void verifyClickingAuthButtonOpensPopUp(){
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"loggedin_panel\"]/div/div/div[2]/button[1]")));
-//        WebElement signInButton = driver.findElement(By.xpath("//*[@id=\"loggedin_panel\"]/div/div/div[2]/button[1]"));
-//        Assert.assertTrue(signInButton.isDisplayed());
-//    }
-
-//    @Test(priority = 5)
-//    public void verifySignInButtonIsClickable(){
-//        WebElement signInButton = driver.findElement(By.xpath("//*[@id=\"loggedin_panel\"]/div/div/div[2]/button[1]"));
-//        signInButton.click();
-//    }
-
-//    @Test(priority = 6)
-//    public void verifyClickingSignInButtonOpensSignInPage(){
-//        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"loginEmail\"]")));
-//        WebElement emailField = driver.findElement(By.xpath("//*[@id=\"loginEmail\"]"));
-//        Assert.assertTrue(emailField.isDisplayed());
-//    }
-
-    @Test(priority = 7)
+    @Test(priority = 1)
     public void verifyClickingSignInButtonSignIsClickable(){
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"loginEmail\"]")));
         WebElement emailField = driver.findElement(By.xpath("//*[@id=\"loginEmail\"]"));
@@ -78,7 +38,7 @@ public class SignInTest {
         signInButton.click();
     }
 
-    @Test(priority = 8)
+    @Test(priority = 2)
     public void verifyClickingSignInButtonSignInSuccessfully() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"navsearchbox\"]")));
         WebElement searchField = driver.findElement(By.xpath("//*[@id=\"navsearchbox\"]"));
