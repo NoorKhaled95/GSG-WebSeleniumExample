@@ -1,35 +1,40 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class SignInTest {
 
-    ChromeDriver chromeDriver;
-    WebDriverWait wait;
-
-    @BeforeClass
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        chromeDriver = new ChromeDriver();
-        chromeDriver.get("https://academy.famcare.app/");
-        wait = new WebDriverWait(chromeDriver, 10);
+    @Test(priority = 1)
+    public void verifyAddToWishListOpensSignInPage() {
+        BrowseWorldMarketTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"loginEmail\"]")));
+        WebElement emailField = BrowseWorldMarketTest.driver.findElement(By.xpath("//*[@id=\"loginEmail\"]"));
+        Assert.assertTrue(emailField.isDisplayed());
     }
 
-    @Test
-    public void verifyThatClickingAcademyButtonOpenArchive(){
-        WebElement psychologicalAspect = chromeDriver.findElement(By.xpath("//div[@data-id='a28c3ce']"));
-        wait.until(ExpectedConditions.elementToBeClickable(psychologicalAspect));
-        psychologicalAspect.click();
+    @Test(priority = 2)
+    public void verifySignInButtonIsClickable() {
+        WebElement signInButton = BrowseWorldMarketTest.driver.findElement(By.xpath("//*[@id=\"checkoutLoginButton\"]"));
+
+        WebElement emailField = BrowseWorldMarketTest.driver.findElement(By.xpath("//*[@id=\"loginEmail\"]"));
+        WebElement passwordField = BrowseWorldMarketTest.driver.findElement(By.xpath("//*[@id=\"loginPassword\"]"));
+
+        emailField.sendKeys("noor@mailna.co");
+        passwordField.sendKeys("password123456");
+        signInButton.click();
     }
 
-    @AfterClass
-    public void tearDown(){
-        chromeDriver.quit();
+    @Test(priority = 3)
+    public void verifyClickingSignInButtonSignInSuccessfully() {
+        WebElement selectWishListTitle = BrowseWorldMarketTest.driver.findElement(By.xpath("//*[@id=\"wishlistForm\"]/div/h2"));
+        Assert.assertTrue(selectWishListTitle.isDisplayed());
+    }
+
+    @AfterTest
+    public void tearDown() {
+        BrowseWorldMarketTest.driver.quit();
     }
 }
+

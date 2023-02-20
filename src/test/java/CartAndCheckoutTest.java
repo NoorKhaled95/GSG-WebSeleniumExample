@@ -1,91 +1,164 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class CartAndCheckoutTest {
-    WebDriver driver;
 
-    @BeforeTest
-    public void setUp() {
-        // Set up the driver and navigate to the website
-        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
-        driver = new ChromeDriver();
-        driver.get("https://www.worldmarket.com/");
-    }
+    @Test(priority = 1)
+    public void verifyCProductNameIsClickable() {
+        SignUpTest.driver.manage().deleteAllCookies();
 
-    @Test
-    public void cartAndCheckoutTest() {
-        // Click on the "Furniture" link in the navigation bar
-        WebElement furnitureLink = driver.findElement(By.linkText("Furniture"));
-        furnitureLink.click();
-
-        // Click on the "Living Room" link in the sidebar
-        WebElement livingRoomLink = driver.findElement(By.xpath("//a[@href='/category/furniture/living-room.do']"));
-        livingRoomLink.click();
-
-        // Click on the first product in the "Living Room" category
-        WebElement firstProduct = driver.findElement(By.xpath("//div[@class='product-tile']/a"));
+        WebElement firstProduct = SignUpTest.driver.findElement(By.xpath("//*[@id=\"ml-grid-view-items\"]/div[1]/div/div[2]/div[1]/a"));
         firstProduct.click();
-
-        // Add the product to the cart
-        WebElement addToCartButton = driver.findElement(By.id("addToCartButton"));
-        addToCartButton.click();
-
-        // Verify that the product is added to the cart
-        WebElement cartLink = driver.findElement(By.xpath("//a[@href='/shopping-cart']"));
-        String cartText = cartLink.getText();
-        Assert.assertEquals(cartText, "Cart (1)");
-
-        // Go to the cart
-        cartLink.click();
-
-        // Verify that the cart page loads successfully
-        String expectedCartTitle = "Shopping Cart | World Market";
-        String actualCartTitle = driver.getTitle();
-        Assert.assertEquals(actualCartTitle, expectedCartTitle);
-
-        // Proceed to checkout
-        WebElement checkoutButton = driver.findElement(By.xpath("//button[@class='btn btn-primary btn-block btn-lg']"));
-        checkoutButton.click();
-
-        // Verify that the checkout page loads successfully
-        String expectedCheckoutTitle = "Checkout | World Market";
-        String actualCheckoutTitle = driver.getTitle();
-        Assert.assertEquals(actualCheckoutTitle, expectedCheckoutTitle);
-
-        // Fill out the shipping information
-        WebElement firstNameField = driver.findElement(By.id("firstName"));
-        firstNameField.sendKeys("John");
-        WebElement lastNameField = driver.findElement(By.id("lastName"));
-        lastNameField.sendKeys("Doe");
-        WebElement address1Field = driver.findElement(By.id("address1"));
-        address1Field.sendKeys("123 Main St");
-        WebElement cityField = driver.findElement(By.id("city"));
-        cityField.sendKeys("Anytown");
-        WebElement stateField = driver.findElement(By.id("state"));
-        stateField.sendKeys("CA");
-        WebElement zipField = driver.findElement(By.id("zip"));
-        zipField.sendKeys("12345");
-
-        // Click on the "Continue to Payment" button
-        WebElement continueToPaymentButton = driver.findElement(By.xpath("//button[@name='dwfrm_shipping_submit']"));
-        continueToPaymentButton.click();
-
-        // Verify that the payment page loads successfully
-        String expectedPaymentTitle = "Payment Information | World Market";
-        String actualPaymentTitle = driver.getTitle();
-        Assert.assertEquals(actualPaymentTitle, expectedPaymentTitle);
-
-        // Fill out the payment information
-        WebElement cardNumberField = driver.findElement(By.id("cardNumber"));
-        cardNumberField.sendKeys("4111111111111111");
-        WebElement cardNameField = driver.findElement(By.id("cardName"));
-        cardNameField.sendKeys("John Doe");
-
-
     }
+
+    @Test(priority = 2)
+    public void verifyClickingProductNameOpensProductDetailsPage() {
+        String expectedResult = "Espresso Wood Studio Day Sofa";
+
+        SignUpTest.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"mainForm\"]/div[2]/div/h1/div")));
+        WebElement firstProductDetails = SignUpTest.driver.findElement(By.xpath("//*[@id=\"mainForm\"]/div[2]/div/h1/div"));
+
+        String actualResult = firstProductDetails.getText();
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+
+    @Test(priority = 3)
+    public void verifyAddToCartButtonIsDisplayed() {
+        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"addToBasket120916\"]")));
+        WebElement addToCartButton = SignUpTest.driver.findElement(By.xpath("//*[@id=\"addToBasket120916\"]"));
+        Assert.assertTrue(addToCartButton.isDisplayed());
+    }
+
+    @Test(priority = 4)
+    public void verifyAddToCartButtonIsClickable() {
+        SignUpTest.driver.manage().deleteAllCookies();
+        WebElement addToCartButton = SignUpTest.driver.findElement(By.xpath("//*[@id=\"addToBasket120916\"]"));
+        addToCartButton.click();
+    }
+
+    @Test(priority = 5)
+    public void verifyClickingAddToCartButtonAddingTheProductToCart() {
+        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"sideCartRail\"]/div[3]/div/div[4]/div/button")));
+        WebElement itemAddToCartText = SignUpTest.driver.findElement(By.xpath("//*[@id=\"sideCartRail\"]/div[2]/div[2]/div/span"));
+        Assert.assertTrue(itemAddToCartText.isDisplayed());
+    }
+
+    @Test(priority = 6)
+    public void verifyCheckoutButtonIsDisplayed() {
+        WebElement checkoutButton = SignUpTest.driver.findElement(By.xpath("//*[@id=\"sideCartRail\"]/div[3]/div/div[4]/div/button"));
+        Assert.assertTrue(checkoutButton.isDisplayed());
+    }
+
+    @Test(priority = 7)
+    public void verifyCheckoutButtonISClickable() {
+//        SignUpTest.driver.manage().deleteAllCookies();
+        WebElement checkoutButton = SignUpTest.driver.findElement(By.xpath("//*[@id=\"sideCartRail\"]/div[3]/div/div[4]/div/button"));
+        checkoutButton.click();
+    }
+
+    @Test(priority = 8)
+    public void verifyClickingCheckoutButtonOpensCartPage() {
+//        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ml-bpMainHeading\"]/h1")));
+        WebElement cartItemsNumText = SignUpTest.driver.findElement(By.xpath("//*[@id=\"ml-bpMainHeading\"]/h1"));
+        Assert.assertTrue(cartItemsNumText.isDisplayed());
+    }
+
+    @Test(priority = 9)
+    public void verifyCartCheckoutButtonIsDisplayed() {
+        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ml-bpOrderCheckOut\"]/input")));
+        WebElement checkoutButton = SignUpTest.driver.findElement(By.xpath("//*[@id=\"ml-bpOrderCheckOut\"]/input"));
+        Assert.assertTrue(checkoutButton.isDisplayed());
+    }
+
+    @Test(priority = 10)
+    public void verifyCartCheckoutButtonISClickable() {
+        for (Cookie element : SignUpTest.driver.manage().getCookies()) {
+            if (!element.getName().equals("s_ppv")
+                    && !element.getName().equals("s_cc")
+                    && !element.getName().equals("s_ppvl")
+                    && !element.getName().equals("AMCVS_BE4F210654F6058E0A4C98A7%40AdobeOrg")
+                    && !element.getName().equals("OPSESSIONID")
+                    && !element.getName().equals("JSESSIONID")
+                    && !element.getName().equals("pvv")
+                    && !element.getName().equals("s_sq")
+                    && !element.getName().equals("c24"))
+                SignUpTest.driver.manage().deleteCookie(element);
+        }
+
+        WebElement checkoutButton = SignUpTest.driver.findElement(By.xpath("//*[@id=\"ml-bpOrderCheckOut\"]/input"));
+        checkoutButton.click();
+    }
+
+    @Test(priority = 11)
+    public void verifyClickingCheckoutButtonOpensCheckoutForm() {
+        WebElement firstNameField = SignUpTest.driver.findElement(By.id("firstName"));
+        Assert.assertTrue(firstNameField.isDisplayed());
+    }
+
+    @AfterTest
+    public void tearDown() {
+        SignUpTest.driver.quit();
+    }
+
+//    @Test(priority = 12)
+//    public void verifyClickingCheckoutButtonProceedCheckout() {
+////        SignUpTest.driver.manage().deleteAllCookies();
+//
+//        WebElement firstNameField = SignUpTest.driver.findElement(By.id("firstName"));
+//        firstNameField.sendKeys("Noor");
+//        WebElement lastNameField = SignUpTest.driver.findElement(By.id("lastName"));
+//        lastNameField.sendKeys("Noor");
+//        WebElement phoneField = SignUpTest.driver.findElement(By.id("dayPhone"));
+//        phoneField.sendKeys("0111222333");
+//        WebElement address1Field = SignUpTest.driver.findElement(By.id("address1"));
+//        address1Field.sendKeys("123 St");
+//        WebElement cityField = SignUpTest.driver.findElement(By.id("city"));
+//        cityField.sendKeys("Test City");
+//        WebElement zipField = SignUpTest.driver.findElement(By.id("zip"));
+//        zipField.sendKeys("02108");
+//        zipField.sendKeys(Keys.ENTER);
+//        WebElement stateField = SignUpTest.driver.findElement(By.id("state"));
+//        SignUpTest.wait.until(ExpectedConditions.elementToBeSelected(stateField));
+////        stateField.sendKeys("MA");
+//
+//        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@name='dwfrm_shipping_submit']")));
+//        WebElement checkoutButton = SignUpTest.driver.findElement(By.xpath("//button[@name='dwfrm_shipping_submit']"));
+//        checkoutButton.click();
+//    }
+//
+//    @Test(priority = 13)
+//    public void verifyThatThePaymentPageLoadsSuccessfully() {
+//        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.id("creditCardName")));
+//        WebElement paymentTitle = SignUpTest.driver.findElement(By.xpath("//*[@id=\"paymentmethodsradiogroup\"]"));
+//        String expectedPaymentTitle = "Payment Method";
+//        String actualPaymentTitle = paymentTitle.getText();
+//        Assert.assertEquals(actualPaymentTitle, expectedPaymentTitle);
+//    }
+//
+//    @Test(priority = 14)
+//    public void verifyThePaymentFormIsDisplayed() {
+//        WebElement creditCardNameField = SignUpTest.driver.findElement(By.id("creditCardName"));
+//        creditCardNameField.sendKeys("Noor");
+//        WebElement cardNumberField = SignUpTest.driver.findElement(By.id("cardNumber"));
+//        cardNumberField.sendKeys("4111111111111111");
+//        WebElement expirationDateField = SignUpTest.driver.findElement(By.id("expirationDate"));
+//        expirationDateField.sendKeys("1223");
+//        WebElement cardNameField = SignUpTest.driver.findElement(By.id("cvv2"));
+//        cardNameField.sendKeys("123");
+//    }
+//
+//    @Test(priority = 15)
+//    public void verifyReviewOrderButtonIsClickable() {
+////        SignUpTest.driver.manage().deleteAllCookies();
+//
+//        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.id("btnContinuePaymentForm")));
+//        WebElement reviewOrderButton = SignUpTest.driver.findElement(By.id("btnContinuePaymentForm"));
+//        reviewOrderButton.click();
+//    }
 }

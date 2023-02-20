@@ -1,58 +1,81 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class SearchAndFilterTest {
-    WebDriver driver;
 
-    @BeforeTest
-    public void setUp() {
-        // Set up the driver and navigate to the website
-        System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
-        driver = new ChromeDriver();
-        driver.get("https://www.worldmarket.com/");
+    @Test(priority = 1)
+    public void VerifySubmittingSearchField() {
+        SignUpTest.driver.manage().deleteAllCookies();
+
+        WebElement searchField = SignUpTest.driver.findElement(By.xpath("//*[@id=\"navsearchbox\"]"));
+        searchField.sendKeys("sofa");
+        searchField.sendKeys(Keys.ENTER);
     }
 
-    @Test
-    public void searchAndFilterTest() {
-        // Type the keyword in the search bar
-        WebElement searchBar = driver.findElement(By.name("q"));
-        searchBar.sendKeys("chair");
+    @Test(priority = 2)
+    public void verifyThatTheSearchResultsAreDisplayed() {
+        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"catalogResult\"]/div[2]/div[1]")));
 
-        // Click on the search button
-        WebElement searchButton = driver.findElement(By.xpath("//button[@class='search-submit-button']"));
-        searchButton.click();
-
-        // Verify that the search results are displayed
-        WebElement searchResultsTitle = driver.findElement(By.xpath("//h1[@class='search-title']"));
-        String expectedSearchTitle = "Results for: chair";
+        WebElement searchResultsTitle = SignUpTest.driver.findElement(By.xpath("//*[@id=\"catalogResult\"]/div[2]/div[1]"));
+        String expectedSearchTitle = "You searched for: \"sofa\"";
         String actualSearchTitle = searchResultsTitle.getText();
         Assert.assertEquals(actualSearchTitle, expectedSearchTitle);
-
-        // Apply the "Price: Under $100" filter
-        WebElement priceFilter = driver.findElement(By.xpath("//a[@data-n-value='price_f%3aUnder+%24100']"));
-        priceFilter.click();
-
-        // Verify that the filtered results are displayed
-        WebElement filteredResultsTitle = driver.findElement(By.xpath("//h1[@class='search-title']"));
-        String expectedFilteredTitle = "Results for: chair";
-        String actualFilteredTitle = filteredResultsTitle.getText();
-        Assert.assertEquals(actualFilteredTitle, expectedFilteredTitle);
-        WebElement priceRange = driver.findElement(By.xpath("//span[@class='refinement-text']"));
-        String expectedPriceRange = "Price: Under $100";
-        String actualPriceRange = priceRange.getText();
-        Assert.assertEquals(actualPriceRange, expectedPriceRange);
     }
 
-    @AfterTest
-    public void tearDown() {
-        // Close the driver and end the session
-        driver.quit();
+    @Test(priority = 3)
+    public void verifyMoreFiltersIsDisplaying() {
+        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"wmCustomDirOpts-filters\"]")));
+
+        WebElement moreFilters = SignUpTest.driver.findElement(By.xpath("//*[@id=\"wmCustomDirOpts-filters\"]"));
+        Assert.assertTrue(moreFilters.isDisplayed());
+    }
+
+    @Test(priority = 3)
+    public void verifyMoreFiltersIsClickable() {
+        WebElement moreFilters = SignUpTest.driver.findElement(By.xpath("//*[@id=\"wmCustomDirOpts-filters\"]"));
+        moreFilters.click();
+    }
+
+    @Test(priority = 4)
+    public void verifyClickingMoreFiltersDisplaysFilters() {
+        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"facetedNavContainer\"]/ul/li[5]/div[1]/button")));
+
+        WebElement priceItem = SignUpTest.driver.findElement(By.xpath("//*[@id=\"facetedNavContainer\"]/ul/li[5]/div[1]/button"));
+        Assert.assertTrue(priceItem.isDisplayed());
+    }
+
+    @Test(priority = 5)
+    public void verifyPriceItemIsClickable() {
+        WebElement priceItem = SignUpTest.driver.findElement(By.xpath("//*[@id=\"facetedNavContainer\"]/ul/li[5]/div[1]/button"));
+        priceItem.click();
+    }
+
+    @Test(priority = 6)
+    public void verifyClickingPriceItemOpensPriceFilters() {
+        WebElement firstPriceFiltersListItem = SignUpTest.driver.findElement(By.xpath("//*[@id=\"price_0\"]"));
+        Assert.assertTrue(firstPriceFiltersListItem.isDisplayed());
+    }
+
+    @Test(priority = 7)
+    public void verifyThatTheAppliedPriceFilteredResultsAreDisplayed() {
+        SignUpTest.driver.manage().deleteAllCookies();
+
+        WebElement firstPriceFilterCheckBox = SignUpTest.driver.findElement(By.xpath("//*[@id=\"price_%24250+-+%24500\"]"));
+        Actions act= new Actions(SignUpTest.driver);
+        act.moveToElement(firstPriceFilterCheckBox).click().build().perform();
+
+        SignUpTest.wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"catalogResult\"]/div[2]/div[2]/div/div[2]/div/div[5]/span[1]/a")));
+
+        WebElement priceRange = SignUpTest.driver.findElement(By.xpath("//*[@id=\"catalogResult\"]/div[2]/div[2]/div/div[2]/div/div[5]/span[1]/a"));
+        String expectedPriceRange = "unfilter Price\n" +
+                "$250 - $500";
+        System.out.println(priceRange.getText());
+        String actualPriceRange = priceRange.getText();
+        Assert.assertEquals(actualPriceRange, expectedPriceRange);
     }
 }
 

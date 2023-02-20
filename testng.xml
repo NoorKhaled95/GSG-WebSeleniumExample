@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="suite1" parallel="classes">
-    <test name="flow1">
-        <classes>
-            <class name="SignUpTest"/>
-            <class name="SignInTest"/>
-        </classes>
-    </test>
+<suite name="suite1" parallel="tests">
+<!--    <test name="flow1" parallel="false">-->
+<!--        <classes>-->
+<!--            <class name="SignUpTest"/>-->
+<!--            <class name="SearchAndFilterTest"/>-->
+<!--            <class name="CartAndCheckoutTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
-    <test name="flow2">
+    <test name="flow2" parallel="false">
         <classes>
+            <class name="BrowseWorldMarketTest"/>
+            <class name="WishListTest"/>
             <class name="SignInTest"/>
-            <class name="SignUpTest"/>
         </classes>
     </test>
 </suite>

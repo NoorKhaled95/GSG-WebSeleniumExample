@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f307be33-d55b-4198-8ca6-f89ab7077dc6" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/CartAndCheckoutTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SearchAndFilterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/WishListTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/WorldMarketTest.java" afterDir="false" />
+    <list default="true" id="f307be33-d55b-4198-8ca6-f89ab7077dc6" name="Changes" comment="second commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AcademyPageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignInTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CartAndCheckoutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CartAndCheckoutTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SearchAndFilterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SearchAndFilterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SignInTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignInTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignUpTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/WishListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/WishListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/WorldMarketTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrowseWorldMarketTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +46,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -60,17 +65,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "H:/AutomtionTest/WorldMarket",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;H:/AutomtionTest/WorldMarket&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager" selected="TestNG.H:/AutomtionTest/WorldMarket/testng.xml">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
@@ -177,6 +193,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675606274809</updated>
+      <workItem from="1676834233377" duration="16803000" />
+      <workItem from="1676920936825" duration="3261000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1675952074220</created>
@@ -199,8 +217,18 @@
       <option name="project" value="LOCAL" />
       <updated>1676678267700</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="second commit">
+      <created>1676684279019</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676684279019</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -216,6 +244,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="second commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
   </component>
 </project>
