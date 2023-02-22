@@ -1,9 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -11,7 +9,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class SignUpTest {
-
     public static ChromeDriver driver;
     public static WebDriverWait wait;
 
@@ -25,100 +22,76 @@ public class SignUpTest {
         wait = new WebDriverWait(driver, 60);
         driver.manage().deleteAllCookies();
     }
-
+    
     @Test(priority = 1)
     public void verifySignUpPopUpIsDisplayed() {
-        WebElement signUpPopUp = driver.findElement(By.xpath("//*[@id=\"cpwm-additionaldisclaimer3\"]"));
-        Assert.assertTrue(signUpPopUp.isDisplayed());
+        Assert.assertTrue(SignUpPOM.getSignUpPopUp().isDisplayed());
     }
 
     @Test(priority = 2)
     public void verifySignUpPopUpEmailFieldIsDisplayed() {
         driver.switchTo().frame("handleFrameResp"); //now you have switched into the frame
-
-        WebElement SignUpPopUpEmailField = driver.findElement(By.xpath("//*[@id=\"EMAIL_ADDRESS_\"]"));
-        Assert.assertTrue(SignUpPopUpEmailField.isDisplayed());
+        Assert.assertTrue(SignUpPOM.getSignUpPopUpEmailField().isDisplayed());
     }
 
     @Test(priority = 2)
     public void verifySignUpPopUpSignUpButtonIsDisplayed() {
-        WebElement popUpSignUpButton = driver.findElement(By.cssSelector("[onclick=\"return validateForm();\"]"));
-        Assert.assertTrue(popUpSignUpButton.isDisplayed());
+        Assert.assertTrue(SignUpPOM.getPopUpSignUpButton().isDisplayed());
     }
 
     @Test(priority = 3)
     public void verifySignUpPopUpEmailFieldAcceptEmail() {
-        WebElement SignUpPopUpEmailField = driver.findElement(By.xpath("//*[@id=\"EMAIL_ADDRESS_\"]"));
-        wait.until(ExpectedConditions.elementToBeClickable(SignUpPopUpEmailField));
-        SignUpPopUpEmailField.sendKeys("nooor@mailna.co");
+        wait.until(ExpectedConditions.elementToBeClickable(SignUpPOM.getSignUpPopUpEmailField()));
+        SignUpPOM.getSignUpPopUpEmailField().sendKeys("noorkh@mailna.co");
     }
 
     @Test(priority = 4)
     public void verifyPopUpSignUpButtonIsClickable() {
-        WebElement popUpSignUpButton = driver.findElement(By.cssSelector("[onclick=\"return validateForm();\"]"));
-        wait.until(ExpectedConditions.elementToBeClickable(popUpSignUpButton));
-        popUpSignUpButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(SignUpPOM.getPopUpSignUpButton()));
+        SignUpPOM.getPopUpSignUpButton().click();
     }
 
     @Test(priority = 5)
     public void verifyPopUpSignUpButtonIsShowsSuccessImage() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"formsg\"]/div[2]/h1/img[2]")));
-        WebElement popUpSuccessImage = driver.findElement(By.xpath(" //*[@id=\"formsg\"]/div[2]/h1/img[2]"));
-        Assert.assertTrue(popUpSuccessImage.isDisplayed());
+        Assert.assertTrue(SignUpPOM.getPopUpSuccessImage().isDisplayed());
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5)//*[@id="gotoCreate"]
     public void verifyPopUpJoinButtonIsDisplayed() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"gotoCreate\"]")));
-        WebElement popUpJoinNowButton = driver.findElement(By.xpath("//*[@id=\"gotoCreate\"]"));
-        Assert.assertTrue(popUpJoinNowButton.isDisplayed());
+        Assert.assertTrue(SignUpPOM.getPopUpJoinNowButton().isDisplayed());
     }
 
     @Test(priority = 6)
     public void verifyPopUpJoinButtonIsClickable() {
-        WebElement popUpJoinNowButton = driver.findElement(By.xpath("//*[@id=\"gotoCreate\"]"));
-        wait.until(ExpectedConditions.elementToBeClickable(popUpJoinNowButton));
+        wait.until(ExpectedConditions.elementToBeClickable(SignUpPOM.getPopUpJoinNowButton()));
         driver.manage().deleteAllCookies();
-        popUpJoinNowButton.click();
+        SignUpPOM.getPopUpJoinNowButton().click();
     }
 
     @Test(priority = 7)
     public void verifyClickingPopUpJoinButtonOpensForm() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"ml-body-container\"]/main/div/div/div/div/div[2]/ul/li[2]/a")));
-        WebElement joinTabButton = driver.findElement(By.xpath("//*[@id=\"ml-body-container\"]/main/div/div/div/div/div[2]/ul/li[2]/a"));
-        Assert.assertTrue(joinTabButton.isDisplayed());
+        Assert.assertTrue(SignUpPOM.getJoinTabButton().isDisplayed());
     }
 
     @Test(priority = 8)
     public void verifyJoinNowButtonIsClickable() {
-        WebElement firstNameField = driver.findElement(By.xpath("//*[@id=\"create_firstName\"]"));
-        firstNameField.sendKeys("noor");
-
-        WebElement lastNameField = driver.findElement(By.xpath("//*[@id=\"create_lastName\"]"));
-        lastNameField.sendKeys("noor");
-
-        WebElement passwordField = driver.findElement(By.xpath("//*[@id=\"userPasswordCreate\"]"));
-        passwordField.sendKeys("password123456");
-
-        WebElement idField = driver.findElement(By.xpath("//*[@id=\"memberIdInputCreateAccount\"]"));
-        idField.sendKeys("0105222220");
-
-        WebElement zipCodeField = driver.findElement(By.xpath("//*[@id=\"postalCodeCreate\"]"));
-        zipCodeField.sendKeys("02108");
-
-        WebElement acceptCheckBox = driver.findElement(By.xpath("//*[@id=\"label_create_tc\"]/span"));
-        acceptCheckBox.click();
+        SignUpPOM.getFirstNameField().sendKeys("noor");
+        SignUpPOM.getLastNameField().sendKeys("noor");
+        SignUpPOM.getPasswordField().sendKeys("password123456");
+        SignUpPOM.getIdField().sendKeys("0109222220");
+        SignUpPOM.getZipCodeField().sendKeys("02108");
+        SignUpPOM.getAcceptCheckBox().click();
 
         driver.manage().deleteAllCookies();
-
-        WebElement createAccountButton = driver.findElement(By.xpath("//*[@id=\"createAccountButton\"]"));
-        createAccountButton.click();
+        SignUpPOM.getCreateAccountButton().click();
     }
 
     @Test(priority = 9)
     public void verifyClickingJoinNowButtonCreateAccountAndLoggedIn() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"navsearchbox\"]")));
-        WebElement searchField = driver.findElement(By.xpath("//*[@id=\"navsearchbox\"]"));
-        Assert.assertTrue(searchField.isDisplayed());
+        Assert.assertTrue(SignUpPOM.getSearchField().isDisplayed());
     }
 }

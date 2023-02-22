@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f307be33-d55b-4198-8ca6-f89ab7077dc6" name="Changes" comment="second commit">
+      <change afterPath="$PROJECT_DIR$/src/test/java/BrowseWorldMarketPOM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CartAndCheckoutPOM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SearchAndFilterPOM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SignInPOM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/SignUpPOM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BrowseWorldMarketTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrowseWorldMarketTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CartAndCheckoutTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CartAndCheckoutTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SearchAndFilterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SearchAndFilterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SignInTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignInTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SignUpTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SignUpTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/WishListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/WishListTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
@@ -62,42 +70,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/AutomtionTest/WorldMarket&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "H:/AutomtionTest/WorldMarket/src/test/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\AutomtionTest\WorldMarket\src\test\java" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="TestNG.H:/AutomtionTest/WorldMarket/testng.xml">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
-      <module name="WorldMarketAutomationTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="WorldMarket" />
       <method v="2">
@@ -124,6 +125,17 @@
       <option name="PARAMETERS" value="" />
       <option name="OUTPUT_DIRECTORY" value="" />
       <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SignInTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="WorldMarketAutomationTest" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SignInTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -166,7 +178,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="TestNG.SignInTest" />
       <item itemvalue="TestNG.H:/AutomtionTest/WorldMarket/testng.xml" />
       <item itemvalue="TestNG.SignUpTest" />
       <item itemvalue="TestNG.SignUpTest.Test1" />
@@ -175,10 +187,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.H:/AutomtionTest/WorldMarket/testng.xml" />
+        <item itemvalue="TestNG.SignInTest" />
         <item itemvalue="TestNG.SignUpTest" />
         <item itemvalue="TestNG.SignUpTest.Test1" />
         <item itemvalue="TestNG.SignUpTest.Test2" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +203,8 @@
       <option name="presentableId" value="Default" />
       <updated>1675606274809</updated>
       <workItem from="1676834233377" duration="16803000" />
-      <workItem from="1676920936825" duration="8597000" />
+      <workItem from="1676920936825" duration="8783000" />
+      <workItem from="1677011435086" duration="12190000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1675952074220</created>
@@ -228,7 +241,21 @@
       <option name="project" value="LOCAL" />
       <updated>1676927253778</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="second commit">
+      <created>1676932659141</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676932659141</updated>
+    </task>
+    <task id="LOCAL-00007" summary="second commit">
+      <created>1676932715610</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676932715610</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
